@@ -1,0 +1,30 @@
+/* HEADER and FOOTER */
+header{
+    border-bottom:solid rgb(164, 140, 0) 5px;
+}
+footer{
+    border-top: solid rgb(164, 140, 0) 5px;
+}
+header,footer{
+    background-color:#372a43; 
+}
+header #light-dark{
+    border: solid black 3px;
+}
+
+/* MAIN */
+
+main{
+    background-image: url(/images/light-dark/galaxy.jpg);
+    background-size: cover;
+}
+
+.sections{
+   background-image: url(/images/light-dark/galaxySection.avif);
+   background-size: cover;
+   border-right: solid rgb(164, 140, 0) 5px;
+   border-left: solid rgb(164, 140, 0) 5px;
+}
+p,h2{
+    color: gold
+}
