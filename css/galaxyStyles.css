@@ -1,47 +1,19 @@
-/* HEADER and FOOTER */
-
-header h1,footer ul li,footer p,a{
-    border-color: #5B3791;
-    color:#5B3791 ;
-    box-shadow: 0 0 3px;
-    background-color: #240A4B;
+:root {
+    --destaque: #a855f7;
+    --brilho: rgba(168, 85, 247, 0.4);
+    --fundo-principal: #080612;
+    --fundo-secundario: #0f0a1e;
+    --fundo-header: rgba(8, 6, 18, 0.95);
+    --borda: rgba(168, 85, 247, 0.3);
+    --texto-principal: #e2d9f3;
+    --texto-secundario: #a78bda;
+    --texto-header: #c4b5fd;
+    --card: #080612;
 }
-
-header,footer{
-    background-color:#10012f; 
-}
-
-header{
-    border-bottom:solid #240A4B  5px;
-}
-footer{
-    border-top: solid #240A4B 5px;
-}
-
-header #light-dark{
-    border: solid #5B3791 3px;
-    background-color: white;
-}
-
-/* MAIN */
 
 main{
     background-image: url(../images/light-dark/galaxy.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position-y: 1000px;
-}
-
-.sections{
-    background-color: #171022;
-    border-right: solid #240A4B 5px;
-    border-left: solid #240A4B 5px;
-}
-
-section{
-    border-bottom: 3px solid #240A4B;
-}
-
-p,h2{
-    color: #462576;
 }

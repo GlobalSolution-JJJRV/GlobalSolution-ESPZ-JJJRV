@@ -1,47 +1,14 @@
-/* HEADER and FOOTER */
+:root {
+    --destaque: #14b8a6;
+    --brilho: rgba(20, 184, 166, 0.4);
+    --fundo-principal: #020d0d;
+    --fundo-secundario: #061414;
+    --fundo-header: rgba(2, 13, 13, 0.97);
+    --borda: rgba(20, 184, 166, 0.65);
+    --texto-principal: #ccfaf5;
+    --texto-secundario: #5eead4;
+    --texto-header: #99f6e4;
+    --card: #083131;
 
-header h1,footer ul li,footer p,a{
-    border-color: #006565;
-    color:#006565 ;
-    box-shadow: 0 0 3px;
-    background-color: #001919;
 }
-
-header,footer{
-    background-color:#001919; 
-}
-
-header{
-    border-bottom:solid #006565 5px;;
-}
-footer{
-    border-top: solid #006565 5px;;
-}
-
-header #light-dark{
-    border: solid #006565 3px;
-    background-color:aliceblue;
-}
-
-
-/* MAIN */
-main{
-    background-color: #112525;
-}
-
-.sections{
-    background-color: #001919;
-    border-right: solid #006565 5px;
-    border-left: solid #006565 5px;
-}
-
-section{
-    border-bottom: 3px solid #006565;
-}
-
-p,h2{
-   color: #006565;
-}
-
-
 

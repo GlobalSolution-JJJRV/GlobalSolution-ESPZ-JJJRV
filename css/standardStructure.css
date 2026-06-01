@@ -1,26 +1,55 @@
-/* Multiple Style */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
 
 header h1,footer ul li,footer p,a{
-    border: 2px solid;
-    padding: 5px;
-    border-radius: 8px;
+    padding: 6px 16px;
     margin: 5px;
+    transition: box-shadow 0.25s, color 0.25s, background-color 0.25s;
+}
+
+header h1:hover, a:hover {
+    box-shadow: 0 0 16px;
+    color: white;
 }
 
 /* HEADER */
 
 header{
     display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
-    background-color:#c7c7c7;
-    align-items: center;
-    height: 100px;
+    z-index: 100;
+    height: 72px;
+    padding: 0 40px;
+    background-color: var(--fundo-header);
+    border-bottom: 1px solid var(--borda);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background-color 0.5s, border-color 0.5s;
+    gap: 32px;
 }
 header h1{
-    display: flex;
-    width: fit-content;
-    margin-left: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 21px;
+    letter-spacing: 2px;
+    color: var(--texto-header);
+    white-space: nowrap;
+    text-shadow: 0 0 20px var(--brilho);
+    flex-shrink: 0;
 }
 header nav{
     display: flex;
@@ -29,27 +58,45 @@ header nav{
 }
 header nav ul{
     display: flex;
-    flex: 0.7;
-    align-items: center;    
-}
-header nav ul li{
-    display: flex;
-    flex: 1;
+    gap: 4px;
+    align-items: center; 
+    justify-content: center;   
 }
 header nav ul li a{
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    white-space: nowrap;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-secundario);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: color 0.25s, border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+header nav ul li a:hover {
+    color: var(--destaque);
+    border-color: var(--borda);
+    background: rgba(168, 85, 247, 0.08);
+    box-shadow: 0 0 12px var(--brilho);
+}
+#light-dark {
+    height: 38px;
+    width: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid var(--borda);
+    background: var(--fundo-secundario);
+    padding: 6px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.5s;
+    object-fit: contain;
+    
 }
 
-header #light-dark{
-    position: absolute;
-    height: 50px;
-    right: 30px;
-    border: solid black 3px;
-    border-radius: 100%;
-    padding: 5px;
+#light-dark:hover {
+    transform: rotate(20deg) scale(1.1);
+    box-shadow: 0 0 16px var(--brilho);
 }
 
 /* MAIN */
@@ -58,26 +105,91 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(81, 81, 81);
+    background-color: var(--fundo-principal);
+    transition: background-color 0.5s;
 }
 
 .sections{
-    width: 50%;
+    width: 100%;
+    max-width: 860px;
+    padding: 40px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 section{
-    scroll-margin-top: 100px;
-    padding-top: 50px ;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    width: auto;
+    scroll-margin-top: 88px;
+    padding: 48px 50px 40px;
+    border: 1px solid var(--borda);
+    border-radius: 1px;
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    overflow: hidden;
 }
 
+section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--destaque), transparent);
+    transition: left 0.5s ease;
+}
+
+section:hover::before {
+    left: 100%;
+}
+section:hover {
+    transform: skewX(-0.4deg) scale(1.01);
+    box-shadow: 0 0 40px var(--brilho), inset 0 0 20px rgba(168,85,247,0.03);
+    border-color: var(--destaque);
+}
+
+@keyframes glitchIn {
+    0%   { opacity: 0; transform: translateX(-8px) skewX(-4deg); }
+    30%  { opacity: 1; transform: translateX(4px) skewX(2deg); }
+    60%  { transform: translateX(-2px) skewX(-1deg); }
+    100% { transform: translateX(0) skewX(0); }
+}
+section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--texto-header);
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+.section-body {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+section p {
+    font-size: 18px;
+    line-height: 2;
+    color: var(--texto-principal);
+    max-width: 600px;
+}
+.section-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brilho), transparent);
+    border-radius: 1px;
+}
 /* FOOTER */
 
 footer{
-    padding: 20px;
-    background-color:#c7c7c7; 
+    width: 100%;
+    padding: 40px;
+    background-color: var(--fundo-header);
+    border-top: 1px solid var(--borda);
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 footer p{
@@ -89,4 +201,51 @@ footer ul{
     display: flex;
     justify-content: space-evenly;
 }
+footer ul li {
+    font-size: 0.78rem;
+    color: var(--texto-secundario);
+    padding: 8px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background: rgba(168, 85, 247, 0.04);
+    transition: border-color 0.25s, color 0.25s;
+    white-space: nowrap;
+}
 
+footer ul li:hover {
+    border-color: var(--borda-forte);
+    color: var(--texto-principal);
+}
+@media (max-width: 768px) {
+    header {
+        padding: 0 16px;
+        height: 60px;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header nav ul li a {
+        font-size: 0.55rem;
+        padding: 5px 8px;
+    }
+
+    .sections {
+        padding: 0 16px 60px;
+    }
+
+    .section-body {
+        flex-direction: column;
+        gap: 16px;
+    }
+     
+    footer ul {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 28px 16px;
+    }
+}
