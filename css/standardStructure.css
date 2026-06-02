@@ -182,9 +182,18 @@ section p {
     height: 3px;
     background: linear-gradient(90deg, var(--brilho), transparent);
     border-radius: 1px;
+}   
+button{
+    background-color: var(--fundo-principal);
+    border: 3px solid var(--borda);
+    padding: 5px;
+    
 }
-.quiz{
-    margin-bottom: 50px;
+button:hover{
+    box-shadow: 0 0 40px var(--brilho), inset 0 0 20px rgba(168,85,247,0.03);
+    border-color: var(--destaque);
+    transform: scale(1.05);
+    transition: 0.2s
 }
 
 

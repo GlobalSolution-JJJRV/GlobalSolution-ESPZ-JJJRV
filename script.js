@@ -33,7 +33,7 @@ const observer = new IntersectionObserver(entries =>{
             if (!entry.isIntersecting){//Se a section não mudar, ignora
                 return
             }
-        
+            
         const entrySelect = entry.target.id //seleciona o id de cada section
 
         links.forEach(link =>{
