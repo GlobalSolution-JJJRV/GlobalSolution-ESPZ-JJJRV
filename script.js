@@ -73,7 +73,7 @@ form.addEventListener('submit',(standard)=>{//Espera a submissão do formulário
         }           //tentaria acessar o valor de null, o que da erro e quebra o codigo
     })
 
-    result.textContent = `Resultado ${grade}`
+    result.textContent = `Resultado: ${grade} acertos.`
 
 })
 //QUIZ
